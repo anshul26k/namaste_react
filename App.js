@@ -1,4 +1,5 @@
-
+import ReactDOM from 'react-dom';
+import React from 'react'
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // const temp =  React.createElement("h1",{id:"heading"},"hello bro");
