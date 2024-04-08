@@ -1,3 +1,44 @@
-#headings{
-    color:blueviolet;
+.header{
+    display:flex;
+    justify-content: space-between;
+    border: 1px solid black ;
+}
+.nav-items>ul{
+    font-size: 24px;
+    display: flex;
+    list-style-type: none;
+}
+
+.logo-img{
+    height: 90%;
+    width: 40%;
+}
+
+.nav-items>ul>li{
+    margin: 10px;
+    padding: 10px;
+}
+
+.search{
+    padding: 10px;
+}
+.card{
+    width: 250px;
+    height: 300px;
+    padding: 3px;
+    overflow: hidden;
+}
+.card:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+.card-img{
+    width: 190px;
+    height: 100px;
+}
+.rest-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content:space-between;
 }
