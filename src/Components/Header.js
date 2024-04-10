@@ -1,5 +1,11 @@
+import { useState } from "react";
+
 const Header = () => {
-    return (
+  
+  const[btnname,setbtnname]=useState("Login");
+ 
+  return (
+
       <div className="header">
         <div className="logo">
           <img
@@ -12,6 +18,9 @@ const Header = () => {
             <li>Home</li>
             <li>About</li>
             <li>Cart</li>
+            <button className="loginbtn" onClick={()=>{
+               btnname=="login"?setbtnname("logout"):setbtnname("login")
+            }}>{btnname}</button>
           </ul>
         </div>
       </div>

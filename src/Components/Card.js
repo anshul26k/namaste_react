@@ -3,7 +3,8 @@ import {CDN_IMG} from "../utils/constants";
 const Card = (props) => {
     // console.log(props)
     const { resdata } = props;
-    const { name, cuisines, avgRating, costForTwo } = resdata.data;
+    const { name, cuisines, avgRating, costForTwo,
+      cloudinaryImageId } = resdata.info;
     return (
       <div
         className="card"
@@ -12,7 +13,8 @@ const Card = (props) => {
         }}
       >
         <img
-          src={CDN_IMG}
+          src={CDN_IMG+
+            cloudinaryImageId}
           alt="Biryani"
           className="card-img"
         />
