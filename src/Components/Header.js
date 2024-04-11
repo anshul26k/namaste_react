@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   
   const[btnname,setbtnname]=useState("Login");
- 
+  console.log("header is renders")
+  useEffect(()=>{
+    console.log("use effect is called")
+  },[btnname])
   return (
 
       <div className="header">

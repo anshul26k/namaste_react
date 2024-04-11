@@ -9,7 +9,7 @@ const Body = () => {
   const [list, setlist] = useState([]);
   const [filterlist,setfilterlist] = useState("");
   const [searchtext, setsearchtext] = useState("");
-  console.log("hi");
+  // console.log("hi");
 
   useEffect(() => {
     fetchdata();
