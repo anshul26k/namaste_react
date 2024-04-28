@@ -2,6 +2,7 @@ import Card from "./Card";
 import resList from "../utils/mockdata";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //  state variona similar like
@@ -22,7 +23,7 @@ const Body = () => {
     const res = await data.json();
     console.log(res);
     const cafes =
-      res?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      res?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     setlist(cafes);
     setfilterlist(cafes);
   };
@@ -63,7 +64,9 @@ const Body = () => {
       </div>
       <div className="rest-container">
         {filterlist.map((restrau) => (
-          <Card key={restrau.info.id} resdata={restrau} />
+          <Link key={restrau.info.id}  to={'/restarants/' + restrau.info.id}>
+          <Card  resdata={restrau} />
+          </Link>
         ))}
       </div>
     </div>
