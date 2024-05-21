@@ -3,6 +3,7 @@ import resList from "../utils/mockdata";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlinestatus from "../utils/useOnlinestatus";
 
 const Body = () => {
   //  state variona similar like
@@ -27,6 +28,12 @@ const Body = () => {
     setlist(cafes);
     setfilterlist(cafes);
   };
+
+  const status = useOnlinestatus()
+  if(status===false){
+    return (<h1>You  r offline</h1>)
+  }
+
 
   return list.length === 0 ? (
     <Shimmer />

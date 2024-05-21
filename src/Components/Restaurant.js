@@ -2,26 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { CDN_IMG,Menu_Api } from '../utils/constants';
 import Shimmer from './Shimmer';
+import useRestramenu from '../utils/useRestramenu';
 
 
 const Restaurant = () => {
-    const [resmenu,setresmenu] = useState(null);
+    // const [resmenu,setresmenu] = useState(null);
     const {resid} = useParams();
     
-
-    useEffect(()=>{
-        fetchMenu();
-    },[])
-
-
-
-const fetchMenu = async () =>{
-    const temp = await fetch(Menu_Api+resid);
-
-    const menu = await temp.json();
-    console.log(menu?.data?.cards[2]?.card?.card?.info);
-    setresmenu(menu?.data?.cards[2]?.card?.card?.info);
-}
+    const resmenu = useRestramenu(resid);
   
    if(resmenu===null)return( <Shimmer/>)
 
@@ -41,3 +29,4 @@ const fetchMenu = async () =>{
 }
 
 export default Restaurant
+
