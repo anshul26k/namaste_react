@@ -12,7 +12,7 @@ function Cart() {
   return (
     <div className='p-4 m-4 text-center '>
         <h1 className='font-bold text-lg'>Cart</h1>
-        <button className='font-semibold text-lg bg-slate-600 px-2 m-2' onClick={handleclear}> Clear</button>
+        <button className='font-semibold text-lg bg-slate-600 px-2' onClick={handleclear}> Clear</button>
         <div className='w-6/12 m-auto'>
             <ItemCard items={data}/>
         </div>
