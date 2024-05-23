@@ -1,5 +1,6 @@
 import React from "react"
 import { json } from "react-router-dom";
+// import UserContext from "../utils/UserContext";
 
 class UserClass extends React.Component {
     constructor(props){
@@ -28,12 +29,15 @@ class UserClass extends React.Component {
     const {avatar_url,name,login,id} = this.state.userinfo;
 
     return (
+      
       <div className="user-card">
         <img src={avatar_url}></img>
         <p>Name: {name}</p>
         <p>username: {login}</p>
         <p>id: {id}</p>
+        {/* <p>{userlog}</p> */}
       </div>
+     
     );
   }
 }

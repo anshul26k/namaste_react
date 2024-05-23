@@ -1,8 +1,10 @@
+import UserContext from "../utils/UserContext";
 const Contact = () => {
     return(
         <div>
             <h1>Mail me at @anshul26vk@gmail.com</h1>
         </div>
+   
     )
 }
 

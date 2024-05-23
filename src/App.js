@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -7,6 +7,7 @@ import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import Restaurant from "./Components/Restaurant";
 import { RouterProvider, createBrowserRouter,Outlet} from "react-router-dom";
+import UserContext from "./utils/UserContext";
 
 // const cardclr = {
 //   backgroundColor:"red",
@@ -15,11 +16,19 @@ import { RouterProvider, createBrowserRouter,Outlet} from "react-router-dom";
 const About = lazy(()=>import("./Components/About"))
 
 const Applayout = () => {
+   const [username,setusername] = useState("unknown")
+
+
   return (
-    <div className="app">
+    // <UserContext.Provider userlog={"anshul"}>
+    <UserContext.Provider value={{userlog:username,setusername}}>
+    <div className="app" >
+
       <Header />
       <Outlet/>
     </div>
+      </UserContext.Provider>
+    // </UserContext.Provider>
   );
 };
 

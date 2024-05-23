@@ -11,8 +11,9 @@ function useRestramenu(resid) {
         const temp = await fetch(Menu_Api+resid);
 
         const menu = await temp.json();
-        console.log(menu?.data?.cards[2]?.card?.card?.info);
-        setresinfo(menu?.data?.cards[2]?.card?.card?.info);
+        // console.log(menu)
+        // console.log(menu?.data?.cards[2]?.card?.card?.info);
+        setresinfo(menu);
     }
 
     return resinfo;
