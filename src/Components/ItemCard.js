@@ -29,7 +29,7 @@ function ItemCard({items}) {
 
                                 <div className=' w-3/12'>
                                     <div className='absolute '>
-                                        <button  className=' p-1 m-auto bg-slate-300  shadow-lg hover:bg-slate-500 ' onClick={()=>{handlecart(it)}}>Add+</button>
+                                        <button  className=' p-1 m-auto bg-slate-300  shadow-lg hover:bg-slate-500 ' onClick={(it)=>{handlecart(it)}}>Add+</button>
                                     </div>
                                     <img src={CDN_IMG+it.card.info.imageId}/>
                                 </div>
