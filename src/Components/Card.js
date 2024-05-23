@@ -10,7 +10,7 @@ const Card = (props) => {
       cloudinaryImageId } = resdata.info;
     return (
       <div
-        className="m-4 p-4 w-[260px] h-[300px] rounded-lg bg-slate-400 hover:bg-slate-600"
+        className="m-4 p-4 w-[260px] h-[300px] rounded-lg bg-slate-400 hover:bg-slate-600 overflow-hidden"
        
       >
         <img
@@ -23,7 +23,7 @@ const Card = (props) => {
         <h4>{cuisines.join(",")}</h4>
         <h4>{avgRating}</h4>
         <h4>{costForTwo}</h4>
-        <h4>{userlog}</h4>
+        {/* <h4>{userlog}</h4> */}
 
       </div>
     );

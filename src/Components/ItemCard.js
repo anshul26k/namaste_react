@@ -1,9 +1,15 @@
 import React from 'react'
 import { CDN_IMG } from '../utils/constants'
+import { useDispatch } from 'react-redux'
+import { addItems } from '../utils/cartslice';
 
 
 function ItemCard({items}) {
     // console.log(items)
+    const dispatch = useDispatch();
+    const handlecart = (it)=>{
+          dispatch(addItems(it));
+    }
    
   return (
                 <div>
@@ -23,7 +29,7 @@ function ItemCard({items}) {
 
                                 <div className=' w-3/12'>
                                     <div className='absolute '>
-                                        <button  className=' p-1 m-auto bg-slate-300  shadow-lg'>Add+</button>
+                                        <button  className=' p-1 m-auto bg-slate-300  shadow-lg hover:bg-slate-500 ' onClick={()=>{handlecart(it)}}>Add+</button>
                                     </div>
                                     <img src={CDN_IMG+it.card.info.imageId}/>
                                 </div>

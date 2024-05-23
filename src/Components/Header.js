@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import useOnlinestatus from "../utils/useOnlinestatus"
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   
   const[btnname,setbtnname]=useState("Login");
   const onstat = useOnlinestatus();
   const {userlog} = useContext(UserContext)
+  const cartItems = useSelector((store)=>store.cart.items)
+  console.log(cartItems)
 
   // console.log("header is renders")
   useEffect(()=>{
@@ -29,6 +32,8 @@ const Header = () => {
             <li className="px-4 py-1 mx-2 bg-blue-300 rounded-lg font-semibold"><Link to="/">Home</Link></li>
             <li className="px-4 py-1 mx-2 bg-blue-300 rounded-lg font-semibold"><Link to="/about">About</Link></li>
             <li className="px-4 py-1 mx-2 bg-blue-300 rounded-lg font-semibold"><Link to="/contact">Contact </Link></li>
+            <li className="px-4 py-1 mx-2 bg-purple-300 rounded-lg font-semibold"><Link to="/cart">Cart
+            - {cartItems.length} </Link></li>
 
             <button className="px-4 py-1 mx-2 bg-blue-300 rounded-lg font-semibold" onClick={()=>{
                btnname=="login"?setbtnname("logout"):setbtnname("login")
